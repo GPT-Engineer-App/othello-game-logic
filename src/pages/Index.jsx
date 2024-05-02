@@ -76,7 +76,7 @@ const Index = () => {
 
   return (
     <Box w="100vw" h="100vh" p={4} bg="gray.100">
-      <Grid templateColumns={`repeat(${boardSize}, 1fr)`} gap={0} gridGap={0} justifyItems="center" alignItems="center">
+      <Grid templateColumns={`repeat(${boardSize}, 1fr)`} gap="0px" gridGap="0px" justifyItems="center" alignItems="center" style={{ columnGap: "0px" }}>
         {board.map((row, x) => row.map((cell, y) => <GridItem w="40px" h="40px" key={`${x}-${y}`} bg={cell ? (cell === "black" ? "black" : "white") : "green.500"} onClick={() => flipDiscs(x, y)} />))}
       </Grid>
       <Button mt={4} colorScheme="blue" onClick={() => setBoard(createInitialBoard())}>
